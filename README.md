@@ -2,7 +2,7 @@
 
 The git client for iOS and Android to manage your repositories on the go, written in React Native
 
-Main Color: `#9900cc`
+Main Color: `#224870`
 
 # TODO List
 
