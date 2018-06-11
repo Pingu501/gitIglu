@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {View} from 'react-native';
 import MenuIcon from '../Components/Molekuls/MenuIcon';
 
@@ -17,14 +18,24 @@ const style = {
     borderColor: '#e8e8e8'
 };
 
-const menuEntries = ['Account']
+const menuEntries = ['Start', 'Account']
 
-const MainMenu = () => {
-    return (
-        <View style={style}>
-            {menuEntries.map((e, k) => <MenuIcon name={e} key={k} onClick={() => {}}/>)}
-        </View>
-    );
-};
+export default class MainMenu extends React.PureComponent {
+    static propTypes = {
+        handleScreenChange: PropTypes.func.isRequired
+    }
 
-export default MainMenu;
+    render() {
+        return (
+            <View style={style}>
+                {menuEntries.map((e, k) => <MenuIcon name={e} key={k} onClick={this.handleIconClick(e)}/>)}
+            </View>
+        );
+    }
+
+    handleIconClick = name => {
+        return () => {
+            this.props.handleScreenChange(name);
+        }
+    }
+}
