@@ -9,7 +9,7 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      currentScreen: Start
+      currentScreen: Account
     }
   }
 
@@ -43,7 +43,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 30,
     padding: 10,
     backgroundColor: 'white'
   },
